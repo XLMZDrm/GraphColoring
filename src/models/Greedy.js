@@ -48,7 +48,7 @@ export class Greedy {
       t = -1;
     } while (j < this.graph.soDinh);
     for (i = 0; i < this.graph.soDinh; i++) {
-      coloredGrap[i] = mauDinh[i];
+      coloredGrap[i] = mauDinh[i] + 1;
     }
     return coloredGrap;
   }
