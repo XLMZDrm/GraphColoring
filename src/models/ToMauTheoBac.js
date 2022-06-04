@@ -9,7 +9,7 @@ function createArray(length) {
 
   return arr;
 }
-export class ToMauTheoBac {
+export default class ToMauTheoBac {
   mauCam;
   tongBacDinh;
   dinh;

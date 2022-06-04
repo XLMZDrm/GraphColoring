@@ -5,22 +5,23 @@ String.prototype.replaceAt = function (index, replacement) {
     this.substring(index + replacement.length)
   );
 };
-export class Graph {
+export default class Graph {
   soDinh;
   logic = [];
   req;
   constructor(req) {
     this.req = req;
-    this.soDinh = this.req.body.soDinh;
-    for (var i = 0; i < this.req.body.soDinh; i++) {
-      for (var j = 0; j < this.req.body.soDinh; j++) {
+    this.soDinh = parseInt(this.req["soDinh"]);
+    for (var i = 0; i < this.soDinh; i++) {
+      for (var j = 0; j < this.soDinh; j++) {
         this.logic[i] = "";
       }
-      for (var j = 0; j < this.req.body.soDinh; j++) {
+      for (var j = 0; j < this.soDinh; j++) {
         this.logic[i] = this.logic[i] + "0";
       }
-      this.req.body[i] = this.req.body[i].trim();
-      var tempString = this.req.body[i].split(";");
+      var tmpStr = this.req[i];
+      tmpStr = tmpStr.trim();
+      var tempString = tmpStr.split(";");
       tempString.forEach((element) => {
         element = parseInt(element);
         this.logic[i] = this.logic[i].replaceAt(element - 1, "1");

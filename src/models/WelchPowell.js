@@ -1,4 +1,4 @@
-export class WelchPowell {
+export default class WelchPowell {
   tongBacDinh;
   dinh;
   constructor(graph) {

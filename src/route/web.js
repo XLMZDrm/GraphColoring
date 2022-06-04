@@ -6,5 +6,7 @@ let router = express.Router();
 
 const initWebRoute = (app) => {
   router.get("/", getController.getHomePage);
+  router.post("/coloringGraph", appController.coloringGraph);
+  return app.use("/", router);
 };
 export default initWebRoute;

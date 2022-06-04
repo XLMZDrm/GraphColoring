@@ -1,4 +1,4 @@
-export class Greedy {
+export default class Greedy {
   constructor(graph) {
     this.graph = graph;
   }
