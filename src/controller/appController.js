@@ -1,1 +1,2 @@
-export default {};
+// let greedy = (req, res) => {};
+// export default {};
