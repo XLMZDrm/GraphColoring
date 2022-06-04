@@ -77,7 +77,7 @@ void tomau()
     {
         for (int kb = 1; kb <= l; kb++)
             if (a[j][dinhtruoc[kb]] == 1)
-                mauphu[++t] = maudinh[dinhtruoc[kb]];
+                mauphu[t++] = maudinh[dinhtruoc[kb]];
         // dau mau cua dinh da to ma ke voi dinh dang xet vao mang mauphu
         maudinh[j] = chonmau(mauphu, t);
         l = j;

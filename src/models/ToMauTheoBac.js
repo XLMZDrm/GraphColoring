@@ -94,7 +94,7 @@ export default class ToMauTheoBac {
       this.tongBacDinh[dinhMax] = 0;
     } while (dem < this.graph.soDinh);
     for (var i = 0; i < this.graph.soDinh; i++) {
-      coloredGraph[i] = this.mauDinh[i];
+      coloredGraph[i + 1] = this.mauDinh[i];
     }
     return coloredGraph;
   }

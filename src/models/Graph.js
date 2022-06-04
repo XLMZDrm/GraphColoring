@@ -19,7 +19,7 @@ export default class Graph {
       for (var j = 0; j < this.soDinh; j++) {
         this.logic[i] = this.logic[i] + "0";
       }
-      var tmpStr = this.req[i];
+      var tmpStr = this.req[i + ""];
       tmpStr = tmpStr.trim();
       var tempString = tmpStr.split(";");
       tempString.forEach((element) => {

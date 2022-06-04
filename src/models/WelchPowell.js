@@ -74,7 +74,7 @@ export default class WelchPowell {
       t = 1;
     } while (j < this.graph.soDinh);
     for (i = 0; i < this.graph.soDinh; i++) {
-      coloredGraph[i] = mauDinh[i];
+      coloredGraph[i + 1] = mauDinh[i];
     }
     return coloredGraph;
   }
