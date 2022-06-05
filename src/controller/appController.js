@@ -25,18 +25,18 @@ let coloringGraph = async (req, res) => {
   try {
     var graph = new Graph(req.body);
     // console.log(graph);
-    var result;
+    var color;
     if (req.body.way == "greedy") {
-      result = new Greedy(graph).toMau();
+      color = new Greedy(graph).toMau();
     } else if (req.body.way == "welch") {
-      result = new WelchPowell(graph).toMau();
+      color = new WelchPowell(graph).toMau();
     } else if (req.body.way == "byLevel") {
-      result = new ToMauTheoBac(graph).toMau();
+      color = new ToMauTheoBac(graph).toMau();
     }
-    for (var prop in result) {
-      result[prop] = colors_list[result[prop]];
+    for (var prop in color) {
+      color[prop] = colors_list[color[prop]];
     }
-    var coloredGrap = { graph: graph, result: result };
+    var coloredGrap = { graph: graph, color: color };
     return res.send(coloredGrap);
   } catch (error) {
     console.log(error);
