@@ -14,6 +14,6 @@ app.use((req, res) => {
 });
 app.listen(PORT, () => {
   herokuAwake(url);
-  const time = 10;
+  const time = 5;
   herokuAwake(url, time);
 });
