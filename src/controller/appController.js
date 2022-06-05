@@ -24,7 +24,6 @@ var colors_list = [
 let coloringGraph = async (req, res) => {
   try {
     var graph = new Graph(req.body);
-    // console.log(graph);
     var color;
     if (req.body.way == "greedy") {
       color = new Greedy(graph).toMau();
