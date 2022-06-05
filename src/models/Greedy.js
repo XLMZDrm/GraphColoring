@@ -16,7 +16,6 @@ export default class Greedy {
   chonMau(g, l) {
     var mau = 1;
     do {
-      console.log(g);
       if (!this.kiemTraMau(g, l, mau)) {
         return mau;
         break;

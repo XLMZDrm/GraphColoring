@@ -8,10 +8,10 @@ String.prototype.replaceAt = function (index, replacement) {
 export default class Graph {
   soDinh;
   logic = [];
-  req;
+
   constructor(req) {
-    this.req = req;
-    this.soDinh = parseInt(this.req["soDinh"]);
+    req;
+    this.soDinh = parseInt(req["soDinh"]);
     for (var i = 0; i < this.soDinh; i++) {
       for (var j = 0; j < this.soDinh; j++) {
         this.logic[i] = "";
@@ -19,7 +19,7 @@ export default class Graph {
       for (var j = 0; j < this.soDinh; j++) {
         this.logic[i] = this.logic[i] + "0";
       }
-      var tmpStr = this.req[i + ""];
+      var tmpStr = req[i + ""];
       tmpStr = tmpStr.trim();
       var tempString = tmpStr.split(";");
       tempString.forEach((element) => {
