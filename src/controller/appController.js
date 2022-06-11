@@ -25,7 +25,7 @@ let coloringGraph = async (req, res) => {
   try {
     var graph = new Graph(req.body);
     var color;
-    if (req.body.way == "greedy") {
+    if (req.body.algorithm == "greedy") {
       color = new Greedy(graph).toMau();
     } else if (req.body.way == "welch") {
       color = new WelchPowell(graph).toMau();
