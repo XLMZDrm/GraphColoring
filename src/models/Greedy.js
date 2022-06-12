@@ -4,9 +4,6 @@ export default class Greedy {
   }
   kiemTraMau(z, w, mau) {
     for (var i = 0; i < w; i++) {
-      // console.log(mau);
-      // console.log(z[i]);
-      // console.log(mau === z[i]);
       if (mau === z[i]) {
         return true;
       }
@@ -48,8 +45,8 @@ export default class Greedy {
       dinhTruoc[l] = j;
       j++;
       t = 0;
-    } while (j < this.graph.soDinh);
-    for (i = 0; i < this.graph.soDinh; i++) {
+    } while (j < this.graph.vertices);
+    for (i = 0; i < this.graph.vertices; i++) {
       coloredGrap[i + 1] = mauDinh[i];
     }
     return coloredGrap;

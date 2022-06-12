@@ -6,17 +6,17 @@ String.prototype.replaceAt = function (index, replacement) {
   );
 };
 export default class Graph {
-  soDinh;
+  vertices;
   logic = [];
 
   constructor(req) {
     req;
-    this.soDinh = parseInt(req["soDinh"]);
-    for (var i = 0; i < this.soDinh; i++) {
-      for (var j = 0; j < this.soDinh; j++) {
+    this.vertices = parseInt(req["vertices"]);
+    for (var i = 0; i < this.vertices; i++) {
+      for (var j = 0; j < this.vertices; j++) {
         this.logic[i] = "";
       }
-      for (var j = 0; j < this.soDinh; j++) {
+      for (var j = 0; j < this.vertices; j++) {
         this.logic[i] = this.logic[i] + "0";
       }
       var tmpStr = req[i + ""];

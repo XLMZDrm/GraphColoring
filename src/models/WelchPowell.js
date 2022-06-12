@@ -6,18 +6,18 @@ export default class WelchPowell {
     this.tongBacDinh = [];
     this.dinh = [];
     var dem = 0;
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       this.dinh[i] = dem++;
     }
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       this.tongBacDinh[i] = 0;
-      for (var j = 0; j < this.graph.soDinh; j++) {
+      for (var j = 0; j < this.graph.vertices; j++) {
         this.tongBacDinh[i] =
           this.tongBacDinh[i] + parseInt(this.graph.logic[i][j]);
       }
     }
-    for (var i = 0; i < this.graph.soDinh; i++) {
-      for (var j = 0; j < this.graph.soDinh; j++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
+      for (var j = 0; j < this.graph.vertices; j++) {
         if (this.tongBacDinh[i] < this.tongBacDinh[j]) {
           this.swap(this.tongBacDinh[i], this.tongBacDinh[j]);
           this.swap(this.dinh[i], this.dinh[j]);
@@ -72,8 +72,8 @@ export default class WelchPowell {
       dinhTruoc[l] = this.dinh[j];
       j++;
       t = 1;
-    } while (j < this.graph.soDinh);
-    for (i = 0; i < this.graph.soDinh; i++) {
+    } while (j < this.graph.vertices);
+    for (i = 0; i < this.graph.vertices; i++) {
       coloredGraph[i + 1] = mauDinh[i];
     }
     return coloredGraph;

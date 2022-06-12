@@ -27,9 +27,9 @@ let coloringGraph = async (req, res) => {
     var color;
     if (req.body.algorithm == "greedy") {
       color = new Greedy(graph).toMau();
-    } else if (req.body.way == "welch") {
+    } else if (req.body.algorithm == "welch") {
       color = new WelchPowell(graph).toMau();
-    } else if (req.body.way == "byLevel") {
+    } else if (req.body.algorithm == "byLevel") {
       color = new ToMauTheoBac(graph).toMau();
     }
     for (var prop in color) {

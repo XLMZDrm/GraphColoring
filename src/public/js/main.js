@@ -1,5 +1,5 @@
 let generateDinh = () => {
-  var dinh = document.getElementsByName("soDinh")[0].value;
+  var dinh = document.getElementsByName("vertices")[0].value;
   document.getElementsByClassName("getDinh")[0].style.display = "none";
   var elements = "<h2>Các đỉnh ngăn cách nhau bởi dấu <b>;</b> không dùng bừa dấu space.</h2><br>";
   for (var i = 1, j = 0; i <= dinh && j < dinh; i++, j++) {

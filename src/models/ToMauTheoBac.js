@@ -20,22 +20,22 @@ export default class ToMauTheoBac {
     this.tongBacDinh = [];
     this.dinh = [];
     this.mauDinh = [];
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       this.mauDinh[i] = -1;
     }
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       this.tongBacDinh[i] = 0;
-      for (var j = 0; j < this.graph.soDinh; j++) {
+      for (var j = 0; j < this.graph.vertices; j++) {
         this.tongBacDinh[i] =
           this.tongBacDinh[i] + parseInt(this.graph.logic[i][j]);
       }
     }
   }
-  dinhBacMac() {
+  dinhBacMax() {
     var max, vitri;
     max = this.tongBacDinh[0];
     vitri = 0;
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       if (this.tongBacDinh[i] > max) {
         max = this.tongBacDinh[i];
         vitri = i;
@@ -44,7 +44,7 @@ export default class ToMauTheoBac {
     return vitri;
   }
   kiemTraMauCam(v, mau) {
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       if (this.mauCam[v][i] === mau) {
         return true;
       }
@@ -67,20 +67,20 @@ export default class ToMauTheoBac {
     var dem, dinhMax, daXet;
     dem = 0;
     daXet = [];
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
       daXet[i] = -1;
     }
-    for (var i = 0; i < this.graph.soDinh; i++) {
-      for (var j = 0; j < this.graph.soDinh; j++) {
+    for (var i = 0; i < this.graph.vertices; i++) {
+      for (var j = 0; j < this.graph.vertices; j++) {
         this.mauCam[i][j] = -1;
       }
     }
     do {
-      dinhMax = this.dinhBacMac();
+      dinhMax = this.dinhBacMax();
       this.mauDinh[dinhMax] = this.chonMau(dinhMax);
       daXet[dinhMax] = 1;
       dem++;
-      for (var i = 0; i < this.graph.soDinh; i++) {
+      for (var i = 0; i < this.graph.vertices; i++) {
         if (parseInt(this.graph.logic[i][dinhMax]) === 1 && daXet[i] !== 1) {
           this.mauCam[i][dinhMax] = this.mauDinh[dinhMax];
           this.tongBacDinh[i]--;
@@ -92,8 +92,8 @@ export default class ToMauTheoBac {
         }
       }
       this.tongBacDinh[dinhMax] = 0;
-    } while (dem < this.graph.soDinh);
-    for (var i = 0; i < this.graph.soDinh; i++) {
+    } while (dem < this.graph.vertices);
+    for (var i = 0; i < this.graph.vertices; i++) {
       coloredGraph[i + 1] = this.mauDinh[i];
     }
     return coloredGraph;
