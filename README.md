@@ -1,3 +1,3 @@
 # graphColoring
 >
-> Author: DIMP
+> Author: drm
