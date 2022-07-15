@@ -1,3 +1,3 @@
-# graphColoring
+# GraphColoring
 >
 > Author: drm
