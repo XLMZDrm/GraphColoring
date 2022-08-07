@@ -1,7 +1,7 @@
-import Graph from "../models/Graph";
-import Greedy from "../models/Greedy";
-import WelchPowell from "../models/WelchPowell";
-import ToMauTheoBac from "../models/ToMauTheoBac";
+import Graph from "../models/Graph.js";
+import Greedy from "../models/Greedy.js";
+import WelchPowell from "../models/WelchPowell.js";
+import ToMauTheoBac from "../models/ToMauTheoBac.js";
 var colors_list = [
   "blank",
   "red",
@@ -42,4 +42,4 @@ let coloringGraph = async (req, res) => {
     return res.redirect("/");
   }
 };
-export default { coloringGraph };
+export { coloringGraph };
