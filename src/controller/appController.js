@@ -39,7 +39,7 @@ let coloringGraph = async (req, res) => {
     return res.send(coloredGrap);
   } catch (error) {
     console.log(error);
-    return res.redirect("/");
+    return res.status(404).end();
   }
 };
 export { coloringGraph };
