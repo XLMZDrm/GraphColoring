@@ -36,7 +36,7 @@ let coloringGraph = async (req, res) => {
       color[prop] = colors_list[color[prop]];
     }
     var coloredGrap = { graph: graph, color: color };
-    return res.send(coloredGrap);
+    return res.json(coloredGrap);
   } catch (error) {
     console.log(error);
     return res.status(404).end();
